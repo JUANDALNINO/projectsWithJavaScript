@@ -35,3 +35,26 @@ function toggleShopCar() {
     }
     aside.classList.toggle('inactive');
 }
+
+
+
+const productList = [];
+
+productList.push ({
+    name:'Bicycle seat bag',
+    price: 876,
+    image: 'https://m.media-amazon.com/images/I/81k2Gmal+VL._AC_SL1500_.jpg'
+}); 
+
+productList.push ({
+    name:'Bicycle helmet',
+    price: 1200,
+    image: 'https://assets.specialized.com/i/specialized/60821-104_HLMT_ALIGN-II-HLMT-MIPS-CE-BLK-BLKREFL-S-M_HERO?bg=rgb(241,241,241)&w=1600&h=900&fmt=auto'
+});
+
+productList.push ({
+    name:'Seat',
+    price: 300,
+    image: 'https://m.media-amazon.com/images/I/61e+sZ9rgNL._AC_SL1500_.jpg'
+});
+
