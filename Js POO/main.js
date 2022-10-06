@@ -339,3 +339,118 @@ console.log(user.greet()); // Called the method greet
 - Abstraction => Objects to simplify reality
 */
 
+
+// 12. Association
+
+class Person {
+  constructor(name, lastName) {
+    this.name = name;
+    this.lastName = lastName
+  }
+}
+
+const john = new Person('Juan', 'Niño');
+const maria = new Person('Maria', 'Niño');
+
+// Relation
+maria.parent = john;
+
+console.log(maria);
+/* Person {
+  name: 'Maria',
+  lastName: 'Niño',
+  parent: Person { name: 'Juan', lastName: 'Niño' },
+}*/
+
+
+
+
+// 13. Aggregationn
+// - Aggregate => component
+
+
+class Company {
+  constructor(name) {
+    this.name = name;
+    this.employees = []
+  }
+}
+
+class Person {
+  constructor(name, lastName) {
+    this.name = name;
+    this.lastName = lastName
+  }
+}
+
+// Components (sons)
+const john = new Person('Juan', 'Niño');
+const maria = new Person('Maria', 'Niño');
+
+// Aggregate (father)
+const companyFazt = new Company('Fazt company');
+
+companyFazt.employees.push(john, maria); // Add to array
+
+console.log(companyFazt);
+/*Company {
+  name: 'Fazt company',
+  employees: [
+    Person {
+      name: 'Juan',
+      lastName: 'Niño',
+    },
+    Person {
+      name: 'Maria',
+      lastName: 'Niño',
+    }
+  ],
+}*/
+
+
+
+// 14. Composition:
+// Component with independent life
+
+const person = {
+  name: 'ryan',
+  lastName: "Ray",
+  address: { // Componente without independent life
+    street: "123 street",
+    city: "Sugamuxi",
+    country: "Colombia"
+  }
+}
+
+
+
+// 15. OOP Principles
+// Encapsulation: Concentrate data and functions hiding internal details
+
+
+function Company(name){
+  let employees = []
+  this.name = name
+  
+  this.getEmployees = function(){
+    return employees
+  }
+  
+  this.addEmployee = function(employee){
+    employees.push(employee)
+  }
+}
+
+const company = new Company('Coca Cola');
+console.log(company);
+/*Company {
+  name: 'Coca Cola',
+  getEmployees: ƒ (),
+  addEmployee: ƒ (),
+}*/
+
+company.addEmployee({name: 'ryan'}); // Add to array
+console.log(company.getEmployees()); // Get employees
+/*
+[ { name: 'ryan' } ]
+*/
