@@ -595,3 +595,37 @@ Stack {
 
 console.log(stack)
 console.log(stack2)
+
+
+
+// 19. OOP Principles
+// Subtype polymorphism
+
+class Person {
+  constructor(name, lastName) {
+    this.name = name
+    this.lastName = lastName
+  }
+}
+
+class Programmer extends Person {
+  constructor(language, name, lastName) {
+    super(name, lastName)
+    this.language = language
+  }
+}
+
+
+const john = new Person('John', 'Dield');
+const daniel = new Programmer('Cloud', 'David', 'Niño');
+
+console.log(john);
+console.log(daniel);
+
+//Subtype:
+function writeFullName(p) {
+  console.log(p.name + " " + p.lastName + " - " + p.language)
+}
+
+writeFullName(john);
+writeFullName(daniel)
