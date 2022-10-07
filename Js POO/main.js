@@ -454,3 +454,110 @@ console.log(company.getEmployees()); // Get employees
 /*
 [ { name: 'ryan' } ]
 */
+
+
+
+// 16.OOP Principles
+// Inheritance
+
+function Person() {
+  this.name = ''
+  this.lastName = ''
+}
+
+
+function Programmer() { //inheritor
+  this.language = ''
+}
+
+Programmer.prototype = new Person(); // Inheritance
+
+
+const person1 = new Person()
+person1.name = 'David'
+person1.lastName = 'Liza'
+console.log(person1)
+/*
+Person {
+  name: 'David',
+  lastName: 'Liza',
+}
+*/
+
+const programmer1 = new Programmer();
+programmer1.name = 'Juan';
+programmer1.lastName = 'Niño';
+programmer1.language = 'Js';
+
+console.log(programmer1); // Inheritance
+/*
+Person {
+  language: 'Js',
+  name: 'Juan',
+  lastName: 'Niño',
+  __proto__: { name: 'Juan', lastName: 'Niño' } // Inheritance of Person
+}
+*/
+
+
+
+// ---- Example inheritance with Class
+// Better way
+
+class User {
+  constructor(name, lastName) {
+    this.name = name
+    this.lastName = lastName
+  }
+}
+
+class Programmer extends User { // Inheritance
+	constructor(language, name, lastName) {
+    super(name, lastName); // Method inheritance
+    this.language = language
+  }
+}
+
+
+const user1 = new User('maria', 'perez');
+console.log(user1);
+/*
+User {
+  name: 'maria',
+  lastName: 'perez',
+  __proto__: { constructor: ƒ User() }
+}*/
+
+const programmer3 = new Programmer('Js', 'martin', 'angarita')
+// In order as a => constructor(language, name, lastName)
+console.log(programmer3);
+/*
+Programmer {
+  name: 'martin',
+  lastName: 'angarita',
+  language: 'Js',
+  __proto__: { constructor: ƒ Programmer() }
+}
+*/
+
+
+
+// 17. OOP Principles
+// Polymorphism
+// Overloading with differents types of data
+
+function countItems(x) {
+  return x.toString().length;
+}
+
+console.log(countItems('Hello world'));
+console.log(countItems(1000));
+
+
+
+function sum(x=0, y=0, z=0) {
+  return x+y+z
+}
+
+console.log(sum(10,20))
+console.log(sum(10,20,30)) // Overloading
