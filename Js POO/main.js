@@ -21,16 +21,16 @@ console.log(Boolean(true)); // Object
 
 // Name object
 const user = {
-    //key: value,
-    name: "Juan",
-    lastName: "Niño",
-    age: 27,
-    hobbies: ['read', 'programming', 'run'],
-    address: {
-        street: "some street",
-        city: "Sugamux"
-    },
-    family: {}
+  //key: value,
+  name: "Juan",
+  lastName: "Niño",
+  age: 27,
+  hobbies: ['read', 'programming', 'run'],
+  address: {
+    street: "some street",
+    city: "Sugamux"
+  },
+  family: {}
 }
 
 console.log(user);
@@ -39,9 +39,9 @@ console.log(user);
 
 // 3. Properties: (Caracteristicas)
 const user = {
-    name: "Juan", // Properties
-    lastName: "Niño", // Properties
-    age: 27 // Properties
+  name: "Juan", // Properties
+  lastName: "Niño", // Properties
+  age: 27 // Properties
 }
 
 
@@ -49,87 +49,87 @@ const user = {
 // 4. Methods: (Comportamientos) Actions
 
 const debitCard = {
-    number: "400056457896",
+  number: "400056457896",
 
-    withdraw: function () { }, // Methods => functions
-    deposit: function () { }
+  withdraw: function () { }, // Methods => functions
+  deposit: function () { }
 }
 
 
 // Example:
 
 const userFull = {
-    // Properties
-    name: "Juan",
-    lastName: "Niño",
-    age: 27,
+  // Properties
+  name: "Juan",
+  lastName: "Niño",
+  age: 27,
 
-    //Methods:
-    showFullName() {
-        return "name lastName"
-    }
+  //Methods:
+  showFullName() {
+    return "name lastName"
+  }
 }
 
 console.log(userFull.showFullName()); // 'name lastName'
 
 
 // 5. This
-	// This object (este objeto)
+// This object (este objeto)
 
-	// Object
-	const userFull = {
-        // Properties
-        name: "David",
-        lastName: "Lizarralde",
-        age: 27,
-        
-        //Methods: Operations
-        showFullName() {
-                      // This object (userFull)
-            return `${this.name} ${this.lastName}`; // Dynamic date
-          }
-      }
-      
-      console.log(userFull.showFullName()); // 'name lastName'
-    
-    
-    
-    //Example:
-    const account = {
-      number: "123456789",
-      amount: 100,
-      
-      desposit() {
-        this.amount = this.amount + 100 // Increase account amount 
-        console.log(this.amount)
-      },
-                      // Parámetro
-      withdraw(quantity) {
-        this.amount = this.amount - quantity // withdraw amount
-      }
-    }
-    
-    account.desposit(); // 200
-    account.desposit(); // 300
-    account.desposit(); // 400
-    console.log(account);
-        /* {
-      number: '123456789',
-      amount: 400,
-      desposit: ƒ desposit()
-    } */
-    
-    
-    account.withdraw(200); // 200
-    account.withdraw(200); // 0
-    
-    console.log(account);
-    /* {
-      number: '123456789',
-      amount: 0,
-      desposit: ƒ desposit(),
-      withdraw: ƒ withdraw()
-    }*/
+// Object
+const userFull = {
+  // Properties
+  name: "David",
+  lastName: "Lizarralde",
+  age: 27,
+
+  //Methods: Operations
+  showFullName() {
+    // This object (userFull)
+    return `${this.name} ${this.lastName}`; // Dynamic date
+  }
+}
+
+console.log(userFull.showFullName()); // 'name lastName'
+
+
+
+//Example:
+const account = {
+  number: "123456789",
+  amount: 100,
+
+  desposit() {
+    this.amount = this.amount + 100 // Increase account amount 
+    console.log(this.amount)
+  },
+  // Parámetro
+  withdraw(quantity) {
+    this.amount = this.amount - quantity // withdraw amount
+  }
+}
+
+account.desposit(); // 200
+account.desposit(); // 300
+account.desposit(); // 400
+console.log(account);
+/* {
+number: '123456789',
+amount: 400,
+desposit: ƒ desposit()
+} */
+
+
+account.withdraw(200); // 200
+account.withdraw(200); // 0
+
+console.log(account);
+/* {
+  number: '123456789',
+  amount: 0,
+  desposit: ƒ desposit(),
+  withdraw: ƒ withdraw()
+}*/
 
 
 
@@ -137,56 +137,56 @@ console.log(userFull.showFullName()); // 'name lastName'
 //                                           Exercise 01: CASHIER
 
 /* Pseudo:
-	- Object: cashier
+  - Object: cashier
   - Props: client, amount, bank, key
   - Methods: withdraw, deposit, seeAmount, changeKey
 */
 
 
 const cashier = {
-    //Props:
-    client: "Juan David",
-    amount: 100,
-    bank: "Bancolombia",
-    key: "3942",
-    
-    //Methods:
-    seeAmount() {
-      return this.amount;
-    },
-    
-    changeKey(newKey) {
-      this.key = newKey;
-      return this.key;
-    },
-    
-    withdraw(quantity) {
-      this.amount = this.amount - quantity;
-    },
-    
-    deposit(quantity) {
-      this.amount = this.amount + quantity;
-    }
+  //Props:
+  client: "Juan David",
+  amount: 100,
+  bank: "Bancolombia",
+  key: "3942",
+
+  //Methods:
+  seeAmount() {
+    return this.amount;
+  },
+
+  changeKey(newKey) {
+    this.key = newKey;
+    return this.key;
+  },
+
+  withdraw(quantity) {
+    this.amount = this.amount - quantity;
+  },
+
+  deposit(quantity) {
+    this.amount = this.amount + quantity;
   }
-  
-  
-  // See client
-  cashier.client;
-  
-  // See amount
-  cashier.amount;
-  
-  // Deposit = 1000
-  cashier.deposit(1000);
-  cashier.amount; //1100
-  
-  // change the key for "4567"
-  cashier.changeKey("4567");
-  cashier.key;
-  
-  // withdraw
-  cashier.withdraw(600);
-  cashier.amount; //500
+}
+
+
+// See client
+cashier.client;
+
+// See amount
+cashier.amount;
+
+// Deposit = 1000
+cashier.deposit(1000);
+cashier.amount; //1100
+
+// change the key for "4567"
+cashier.changeKey("4567");
+cashier.key;
+
+// withdraw
+cashier.withdraw(600);
+cashier.amount; //500
 
 
 
@@ -194,27 +194,27 @@ const cashier = {
 
 // Build
 function Person() {
-    this.name = ""
-    this.lastName = ""
-    this.age = 0
-    this.showFullName = function() {
-      return `${this.name} ${this.lastName}`
-    }
+  this.name = ""
+  this.lastName = ""
+  this.age = 0
+  this.showFullName = function () {
+    return `${this.name} ${this.lastName}`
   }
-  
-  
-  // Call
-  const user1 = new Person();
-  user1.name = "Juan";
-  user1.lastName = "Niño";
-  user1.age = 27;
-  
-  console.log(user1.showFullName());
-  /* 
-  'Juan'
-  'Niño'
-  27
-  'Juan Niño'*/
+}
+
+
+// Call
+const user1 = new Person();
+user1.name = "Juan";
+user1.lastName = "Niño";
+user1.age = 27;
+
+console.log(user1.showFullName());
+/* 
+'Juan'
+'Niño'
+27
+'Juan Niño'*/
 
 
 
@@ -222,19 +222,19 @@ function Person() {
 // Js objects
 
 const userObject = {
-    name: "Juan",
-    lastName: "David",
-    age: 27,
-    showName(){}
-  }
-  
-  console.log(Object.keys(userObject));
-  // Keys => [ 'name', 'lastName', 'age', 'showName' ]
-  
-  console.log(Object.values(userObject));
-  // Values => [ 'Juan', 'David', 27, ƒ showName() ]
-  
-  
+  name: "Juan",
+  lastName: "David",
+  age: 27,
+  showName() { }
+}
+
+console.log(Object.keys(userObject));
+// Keys => [ 'name', 'lastName', 'age', 'showName' ]
+
+console.log(Object.values(userObject));
+// Values => [ 'Juan', 'David', 27, ƒ showName() ]
+
+
 
 
 // 8. New:
@@ -261,8 +261,8 @@ Person {
 function Person(name, lastName) {
   this.name = name;
   this.lastName = lastName
-  
-  this.displayName = function() {
+
+  this.displayName = function () {
     return `${this.name} ${this.lastName}`
   }
 }
@@ -273,7 +273,7 @@ console.log(juan.displayName());
 
 
 // Add other method(function):
-juan.greet = function() {
+juan.greet = function () {
   return `Hello I'm ${this.name}`
 }
 
@@ -290,7 +290,7 @@ console.log(juan);
 const john = new Person("John", "Jairo");
 const juana = new Person("Juana", "Paola");
 
-Person.prototype.greet = function() {
+Person.prototype.greet = function () {
   return `Hello, I'm ${this.name}`
 }
 
@@ -306,7 +306,7 @@ class Person {
     this.name = name
     this.lastName = lastName
   }
-  
+
   //Methods
   greet() {
     return `Hello! ${this.name} ${this.lastName}`
@@ -428,15 +428,15 @@ const person = {
 // Encapsulation: Concentrate data and functions hiding internal details
 
 
-function Company(name){
+function Company(name) {
   let employees = []
   this.name = name
-  
-  this.getEmployees = function(){
+
+  this.getEmployees = function () {
     return employees
   }
-  
-  this.addEmployee = function(employee){
+
+  this.addEmployee = function (employee) {
     employees.push(employee)
   }
 }
@@ -449,7 +449,7 @@ console.log(company);
   addEmployee: ƒ (),
 }*/
 
-company.addEmployee({name: 'ryan'}); // Add to array
+company.addEmployee({ name: 'ryan' }); // Add to array
 console.log(company.getEmployees()); // Get employees
 /*
 [ { name: 'ryan' } ]
@@ -512,7 +512,7 @@ class User {
 }
 
 class Programmer extends User { // Inheritance
-	constructor(language, name, lastName) {
+  constructor(language, name, lastName) {
     super(name, lastName); // Method inheritance
     this.language = language
   }
@@ -555,9 +555,43 @@ console.log(countItems(1000));
 
 
 
-function sum(x=0, y=0, z=0) {
-  return x+y+z
+function sum(x = 0, y = 0, z = 0) {
+  return x + y + z
 }
 
-console.log(sum(10,20))
-console.log(sum(10,20,30)) // Overloading
+console.log(sum(10, 20))
+console.log(sum(10, 20, 30)) // Overloading
+
+
+
+// 18. OOP Principles
+// Parametric
+
+function Stack() {
+  this.items = []
+
+  this.push = function (item) {
+    this.items.push(item)
+  }
+}
+
+const stack = new Stack()
+stack.push("I'm a string");
+/*Stack {
+  items: [ "I'm a string" ],
+  push: ƒ (),
+  __proto__: { constructor: ƒ Stack() }
+}*/
+
+const stack2 = new Stack()
+stack2.push(1234);
+/*
+Stack {
+  items: [ 1234 ],
+  push: ƒ (),
+  __proto__: { constructor: ƒ Stack() }
+}
+*/
+
+console.log(stack)
+console.log(stack2)
