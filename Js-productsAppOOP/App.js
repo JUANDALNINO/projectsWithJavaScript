@@ -69,7 +69,7 @@ document.getElementById('product-form')
         const ui = new UI();
 
         if(name === '' || price === '' || year === '') {
-            ui.showMessage('Please complete fields', 'alert');
+            return ui.showMessage('Please complete fields', 'danger');
         }
 
         // Method
