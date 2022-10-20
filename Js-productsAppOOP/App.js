@@ -22,6 +22,7 @@ class UI {
                     <div class="card-text">
                         <p>Product Year: ${product.year}</p>
                     </div>
+                    <a href="#" class="btn btn-danger" name="delete">Delete</a>
                 </div>
             </div>
         `;
@@ -34,18 +35,31 @@ class UI {
         document.getElementById('product-form').reset();
     }
 
-    deleteProduct() {
-
+    deleteProduct(element) {
+        if(element.name === 'delete') {
+            element.parentElement.parentElement.parentElement.remove();
+            this.showMessage('Product Deleted Successfully', 'info');
+        }
     }
 
-    showMessage() {
+    showMessage(message, cssClass) {
+        const div = document.createElement('div');
+        div.className = `alert alert-${cssClass} mt-3`;
+        div.appendChild(document.createTextNode(message));
+        // Showing in DOM
+        const container = document.querySelector('.container');
+        const app = document.querySelector('#App');
+        container.insertBefore(div, app);
 
+        setTimeout(function() {
+            document.querySelector('.alert').remove();
+        }, 2000);
     }
 }
 
 // DOM Events
 document.getElementById('product-form')
-    .addEventListener('submit', function(e) {
+    .addEventListener('submit', function (e) {
         const name = document.getElementById('name').value;
         const price = document.getElementById('price').value;
         const year = document.getElementById('year').value;
@@ -53,8 +67,21 @@ document.getElementById('product-form')
         const product = new Product(name, price, year);
 
         const ui = new UI();
+
+        if(name === '' || price === '' || year === '') {
+            ui.showMessage('Please complete fields', 'alert');
+        }
+
         // Method
         ui.addProduct(product);
+        
+        ui.showMessage('Product Added Successfully', 'success');
 
         e.preventDefault();
+    });
+
+
+document.getElementById('product-list').addEventListener('click', function(e) {
+    const ui = new UI();
+    ui.deleteProduct(e.target);
 })
