@@ -33,20 +33,33 @@ const students = [
   ];
 
 
-// 05. Sort
-// Organize => sort
-const sortedStudents = students.sort(function(first, second) {
-    if(first.age > second.age) { // Condition Sort
+// 06. Find
+// Find an element
+
+const result = students.find(function (student) {
+        // Find Name
+    if(student.name === 'Jack') {
         return 1
-    } else {
-        return -1
     }
 })
-console.log(sortedStudents);
+console.log(result);
 
-const sortedStudents2 = students.sort((a,b) => a.age > b.age ? 1 : -1);
-console.log(sortedStudents2);
 
-const numbers = [10, 30, 1000, 10000, 100, 10]
-console.log(numbers.sort((a,b) => a-b));
-// [ 10, 10, 30, 100, 1000, 10000 ]
+
+const resultLastName = students.find((student) => {
+    // Find LastName
+    if(student.lastname === 'Doe') {
+        return 1
+    }
+})
+console.log(resultLastName);
+
+
+
+const resultAge = students.find((student) => {
+    //Find age
+    if(student.age === 20) {
+        return 1
+    }
+})
+console.log(resultAge)

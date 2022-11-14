@@ -19,7 +19,7 @@ const students = [
       course: "Accounting",
     },
     {
-      name: "Ryan Jhon",
+      name: "Jyan Jhon",
       lastname: "Ray",
       age: 23,
       course: "Web Development",
@@ -33,20 +33,11 @@ const students = [
   ];
 
 
-// 05. Sort
-// Organize => sort
-const sortedStudents = students.sort(function(first, second) {
-    if(first.age > second.age) { // Condition Sort
-        return 1
-    } else {
-        return -1
-    }
-})
-console.log(sortedStudents);
+// 08. Every
+// Check and result => All elements for true
 
-const sortedStudents2 = students.sort((a,b) => a.age > b.age ? 1 : -1);
-console.log(sortedStudents2);
+const result = students.every((student) => student.age === 20)
+console.log(result)
 
-const numbers = [10, 30, 1000, 10000, 100, 10]
-console.log(numbers.sort((a,b) => a-b));
-// [ 10, 10, 30, 100, 1000, 10000 ]
+const result2 = students.every((student) => student.name.includes('J'))
+console.log(result2)

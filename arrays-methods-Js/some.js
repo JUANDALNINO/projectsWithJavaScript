@@ -32,21 +32,11 @@ const students = [
     },
   ];
 
-
-// 05. Sort
-// Organize => sort
-const sortedStudents = students.sort(function(first, second) {
-    if(first.age > second.age) { // Condition Sort
-        return 1
-    } else {
-        return -1
+// 07. Some
+// Check and result => true or false
+const result = students.some((student) => {
+    if(student.age > 24) {
+        return true
     }
 })
-console.log(sortedStudents);
-
-const sortedStudents2 = students.sort((a,b) => a.age > b.age ? 1 : -1);
-console.log(sortedStudents2);
-
-const numbers = [10, 30, 1000, 10000, 100, 10]
-console.log(numbers.sort((a,b) => a-b));
-// [ 10, 10, 30, 100, 1000, 10000 ]
+console.log(result);
